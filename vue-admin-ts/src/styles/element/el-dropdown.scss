@@ -1,0 +1,14 @@
+.el-popper.el-dropdown__popper.el-popper {
+    .el-dropdown-menu {
+        padding: 4px;
+
+        .el-dropdown-menu__item--divided {
+            margin: 0;
+        }
+
+        .el-dropdown-menu__item {
+            padding: 6px 8px;
+            text-align: left;
+        }
+    }
+}

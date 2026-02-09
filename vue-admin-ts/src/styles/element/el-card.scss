@@ -1,0 +1,13 @@
+.el-card {
+    &.is-always-shadow {
+        box-shadow: none !important;
+    }
+
+    .el-card__header {
+        padding: 15px;
+    }
+
+    .el-card__body {
+        padding: 15px;
+    }
+}

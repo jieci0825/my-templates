@@ -1,0 +1,113 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "admin",
+            "password": "123123",
+            "nickname": "管理员",
+            "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=admin",
+            "roleId": 1,
+            "accessToken": "admin-access-9927014709ad63d5b98ed69b3a247109",
+            "accessTokenExpiresAt": 1770631920388,
+            "refreshToken": "admin-refresh-d8eadf921a3f9d6205b323d1da3ff799",
+            "refreshTokenExpiresAt": 1773220320388,
+            "menus": [
+                {
+                    "id": 1,
+                    "name": "Dashboard",
+                    "type": 2,
+                    "path": "/dashboard",
+                    "sort": 1,
+                    "parentId": 0,
+                    "status": 1,
+                    "title": "仪表盘",
+                    "icon": "Dashboard",
+                    "isExternal": 0,
+                    "isCache": 1,
+                    "isAffix": 1
+                },
+                {
+                    "id": 2,
+                    "name": "System",
+                    "type": 1,
+                    "path": "/system",
+                    "sort": 2,
+                    "parentId": 0,
+                    "status": 1,
+                    "title": "系统管理",
+                    "icon": "Setting",
+                    "isExternal": 0,
+                    "isCache": 0,
+                    "isAffix": 0,
+                    "children": [
+                        {
+                            "id": 21,
+                            "name": "SystemUser",
+                            "type": 2,
+                            "path": "/system/user",
+                            "sort": 1,
+                            "parentId": 2,
+                            "status": 1,
+                            "title": "用户管理",
+                            "icon": "User",
+                            "isExternal": 0,
+                            "isCache": 1,
+                            "isAffix": 0
+                        },
+                        {
+                            "id": 22,
+                            "name": "SystemRole",
+                            "type": 2,
+                            "path": "/system/role",
+                            "sort": 2,
+                            "parentId": 2,
+                            "status": 1,
+                            "title": "角色管理",
+                            "icon": "Avatar",
+                            "isExternal": 0,
+                            "isCache": 1,
+                            "isAffix": 0
+                        }
+                    ]
+                }
+            ],
+            "permissions": [
+                "system:user:read",
+                "system:user:write",
+                "system:role:read",
+                "system:role:write"
+            ]
+        },
+        {
+            "id": 2,
+            "username": "user001",
+            "password": "123123",
+            "nickname": "普通用户",
+            "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=user001",
+            "roleId": 2,
+            "accessToken": "user001-access-token",
+            "accessTokenExpiresAt": 0,
+            "refreshToken": "user001-refresh-token",
+            "refreshTokenExpiresAt": 0,
+            "menus": [
+                {
+                    "id": 1,
+                    "name": "Dashboard",
+                    "type": 2,
+                    "path": "/dashboard",
+                    "sort": 1,
+                    "parentId": 0,
+                    "status": 1,
+                    "title": "仪表盘",
+                    "icon": "Dashboard",
+                    "isExternal": 0,
+                    "isCache": 1,
+                    "isAffix": 1
+                }
+            ],
+            "permissions": [
+                "dashboard:read"
+            ]
+        }
+    ]
+}
