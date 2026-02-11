@@ -78,8 +78,8 @@ watch(
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #f1f5f9;
-    color: var(--el-text-color-primary);
+    background: var(--el-color-primary-light-9);
+    color: var(--el-color-primary);
     font-weight: 500;
     overflow: hidden;
     flex-shrink: 0;
