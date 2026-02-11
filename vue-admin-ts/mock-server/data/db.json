@@ -7,10 +7,10 @@
             "nickname": "管理员",
             "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=admin",
             "roleId": 1,
-            "accessToken": "admin-access-9927014709ad63d5b98ed69b3a247109",
-            "accessTokenExpiresAt": 1770631920388,
-            "refreshToken": "admin-refresh-d8eadf921a3f9d6205b323d1da3ff799",
-            "refreshTokenExpiresAt": 1773220320388,
+            "accessToken": "admin-access-68c48b5b5c6210492cb34ae0bb26d5d5",
+            "accessTokenExpiresAt": 1770798015627,
+            "refreshToken": "admin-refresh-f5b27cfa4466a60df512047bd0399fee",
+            "refreshTokenExpiresAt": 1773386415628,
             "menus": [
                 {
                     "id": 1,
