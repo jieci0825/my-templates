@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { isNumber } from '@/utils'
 import { computed, ref, watch } from 'vue'
 
 interface Props {
@@ -32,7 +33,7 @@ const avatarText = computed(() => {
 
 /** 计算后的尺寸 */
 const computedSize = computed(() => {
-    if (typeof props.size === 'number') {
+    if (isNumber(props.size)) {
         return `${props.size}px`
     }
     return props.size
@@ -40,7 +41,7 @@ const computedSize = computed(() => {
 
 /** 文字字体大小（头像尺寸的一半） */
 const fontSize = computed(() => {
-    const sizeNum = typeof props.size === 'number' ? props.size : parseInt(props.size)
+    const sizeNum = isNumber(props.size) ? props.size : parseInt(props.size)
     return `${sizeNum * 0.5}px`
 })
 
@@ -67,8 +68,18 @@ watch(
             fontSize: fontSize,
         }"
     >
-        <img v-if="showImage" :src="url" :alt="username" class="avatar-image" @error="handleImgError" />
-        <span v-else class="avatar-text">{{ avatarText }}</span>
+        <img
+            v-if="showImage"
+            :src="url"
+            :alt="username"
+            class="avatar-image"
+            @error="handleImgError"
+        />
+        <span
+            v-else
+            class="avatar-text"
+            >{{ avatarText }}</span
+        >
     </div>
 </template>
 
