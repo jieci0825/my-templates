@@ -41,6 +41,7 @@ function getElFormRef() {
     return elFormRef.value!
 }
 
+/** 表单 API */
 const formApi: FormApi = {
     getModel,
     setModel,
@@ -50,10 +51,13 @@ const formApi: FormApi = {
     getElFormRef,
 }
 
+/** 获取插槽 */
 const slots = useSlots()
 
+/** 创建表单上下文 */
 createProFormContext({ model, formApi, slots })
 
+/** 暴露表单 API */
 defineExpose<ProFormExpose>({
     getModel,
     setModel,
