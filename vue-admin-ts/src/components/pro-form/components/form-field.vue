@@ -3,6 +3,8 @@ import { computed } from 'vue'
 import type { ProFormColumn } from '../types'
 import { useProFormContext } from '../context'
 import { useFormOptions } from '../hooks/use-form-options'
+import ImageUpload from '@/components/upload/image-upload/index.vue'
+import FileUpload from '@/components/upload/file-upload/index.vue'
 
 defineOptions({ name: 'ProFormField' })
 
@@ -107,4 +109,18 @@ const actualFieldProps = computed(() => props.fieldProps ?? props.column.fieldPr
             {{ opt.label }}
         </el-checkbox>
     </el-checkbox-group>
+
+    <!-- ImageUpload -->
+    <ImageUpload
+        v-else-if="column.el === 'image-upload'"
+        v-model="model[column.field]"
+        v-bind="actualFieldProps"
+    />
+
+    <!-- FileUpload -->
+    <FileUpload
+        v-else-if="column.el === 'file-upload'"
+        v-model="model[column.field]"
+        v-bind="actualFieldProps"
+    />
 </template>

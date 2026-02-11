@@ -11,7 +11,8 @@ export type ProFormColumnEl =
   | 'switch'
   | 'radio'
   | 'checkbox'
-  | 'upload'
+  | 'image-upload'
+  | 'file-upload'
 
 /** 选项数据项 */
 export interface OptionItem {
