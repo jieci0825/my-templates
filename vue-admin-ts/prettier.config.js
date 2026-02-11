@@ -14,6 +14,8 @@ export default {
     semi: false,
     // 使用单引号
     singleQuote: true,
+    // HTML/Vue：每个属性独占一行
+    singleAttributePerLine: true,
     // 对象属性最后一个逗号
     trailingComma: 'all',
     // 换行符
