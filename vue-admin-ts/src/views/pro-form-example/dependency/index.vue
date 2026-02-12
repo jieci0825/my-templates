@@ -140,7 +140,7 @@ const columns: ProFormColumn[] = [
 
 const [PageForm] = usePageForm({
     columns,
-    colSpan: 12,
+    colSpan: 24,
     labelWidth: '100px',
     onSubmit(model) {
         ElMessage.success(`提交数据：${JSON.stringify(model)}`)

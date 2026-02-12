@@ -116,7 +116,7 @@ const rules: FormRules = {
 const [PageForm, formApi] = usePageForm({
     columns,
     rules,
-    colSpan: 12,
+    colSpan: 24,
     labelWidth: '100px',
     onSubmit(model) {
         ElMessage.success(`校验通过，提交数据：${JSON.stringify(model)}`)

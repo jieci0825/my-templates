@@ -46,7 +46,7 @@ const columns: ProFormColumn[] = [
         render: ({ model }) => {
             return h(ElSlider, {
                 modelValue: model.progress,
-                'onUpdate:modelValue': (val: number) => {
+                'onUpdate:modelValue': (val: number | number[]) => {
                     model.progress = val
                 },
                 showInput: true,
@@ -72,7 +72,7 @@ const columns: ProFormColumn[] = [
 
 const [PageForm] = usePageForm({
     columns,
-    colSpan: 12,
+    colSpan: 24,
     labelWidth: '100px',
     onSubmit(model) {
         ElMessage.success(`提交数据：${JSON.stringify(model)}`)
@@ -100,7 +100,7 @@ function toggleTag(model: Record<string, any>, tag: string) {
                     <ElTag
                         v-for="tag in tagOptions"
                         :key="tag"
-                        :type="model.tags?.includes(tag) ? 'primary' : 'info'"
+                        :type="model.tags?.includes(tag) ? 'primary' : undefined"
                         :effect="model.tags?.includes(tag) ? 'dark' : 'plain'"
                         class="tag-item"
                         @click="toggleTag(model, tag)"
