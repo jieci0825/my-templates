@@ -4,6 +4,7 @@ import IconDashboard from '~icons/mdi/view-dashboard'
 import IconSettings from '~icons/mdi/cog'
 import IconUser from '~icons/mdi/account'
 import IconUserAvatar from '~icons/mdi/account-circle'
+import IconForm from '~icons/mdi/text-box-edit-outline'
 
 interface Props {
     /** 后端返回的 icon 名称 */
@@ -18,6 +19,7 @@ const iconMap: Record<string, Component> = {
     Setting: IconSettings,
     User: IconUser,
     Avatar: IconUserAvatar,
+    Form: IconForm,
 }
 
 const iconComponent = computed(() => {
