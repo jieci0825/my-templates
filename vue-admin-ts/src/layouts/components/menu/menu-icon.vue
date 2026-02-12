@@ -5,6 +5,11 @@ import IconSettings from '~icons/mdi/cog'
 import IconUser from '~icons/mdi/account'
 import IconUserAvatar from '~icons/mdi/account-circle'
 import IconForm from '~icons/mdi/text-box-edit-outline'
+import IconDocument from '~icons/mdi/file-document-outline'
+import IconCircleCheck from '~icons/mdi/check-circle-outline'
+import IconLink from '~icons/mdi/link'
+import IconUpload from '~icons/mdi/upload'
+import IconBrush from '~icons/mdi/brush'
 
 interface Props {
     /** 后端返回的 icon 名称 */
@@ -20,6 +25,11 @@ const iconMap: Record<string, Component> = {
     User: IconUser,
     Avatar: IconUserAvatar,
     Form: IconForm,
+    Document: IconDocument,
+    CircleCheck: IconCircleCheck,
+    Link: IconLink,
+    Upload: IconUpload,
+    Brush: IconBrush,
 }
 
 const iconComponent = computed(() => {

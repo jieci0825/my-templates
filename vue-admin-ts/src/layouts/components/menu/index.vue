@@ -114,7 +114,11 @@ defineExpose({
         :router="false"
         @select="handleSelect"
     >
-        <MenuRecursive v-for="item in visibleMenuData" :key="item.id" :item="item" />
+        <MenuRecursive
+            v-for="item in visibleMenuData"
+            :key="item.id"
+            :item="item"
+        />
     </el-menu>
 </template>
 
