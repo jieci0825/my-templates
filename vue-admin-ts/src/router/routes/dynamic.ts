@@ -13,7 +13,7 @@ function generateRoute(metaPath: string, metaConfig: MetaConfig): RouteRecordRaw
     }
 
     const routePath = metaPath.replace('../../views/', '/').replace('/meta.json', '')
-    const name = toPascalCase(routePath.slice(1).replaceAll('/', '-'))
+    const name = toPascalCase(routePath.slice(1).split('/').join('-'))
     const componentPath = metaPath.replace('/meta.json', '/index.vue')
 
     const { ignore, ...metaData } = metaConfig
