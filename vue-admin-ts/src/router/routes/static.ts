@@ -16,33 +16,47 @@ export const staticRoutes: RouteRecordRaw[] = [
                 component: () => import('@/views/dashboard/index.vue'),
                 meta: {
                     title: '仪表盘',
-                    icon: 'icon-dashboard',
                 },
             },
             {
                 path: 'pro-form-example/basic',
                 name: 'ProFormExampleBasic',
                 component: () => import('@/views/pro-form-example/basic/index.vue'),
+                meta: {
+                    title: '基础用法',
+                },
             },
             {
                 path: 'pro-form-example/custom',
                 name: 'ProFormExampleCustom',
                 component: () => import('@/views/pro-form-example/custom/index.vue'),
+                meta: {
+                    title: '自定义',
+                },
             },
             {
                 path: 'pro-form-example/upload',
                 name: 'ProFormExampleUpload',
                 component: () => import('@/views/pro-form-example/upload/index.vue'),
+                meta: {
+                    title: '文件上传',
+                },
             },
             {
                 path: 'pro-form-example/dependency',
                 name: 'ProFormExampleDependency',
                 component: () => import('@/views/pro-form-example/dependency/index.vue'),
+                meta: {
+                    title: '联动表单',
+                },
             },
             {
                 path: 'pro-form-example/validation',
                 name: 'ProFormExampleValidation',
                 component: () => import('@/views/pro-form-example/validation/index.vue'),
+                meta: {
+                    title: '校验表单',
+                },
             },
             // 重定向路由（用于刷新页面）
             {
