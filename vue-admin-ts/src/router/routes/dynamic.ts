@@ -13,7 +13,7 @@ function generateRoute(metaPath: string, metaConfig: MetaConfig): RouteRecordRaw
     }
 
     const routePath = metaPath.replace('../../views/', '/').replace('/meta.json', '')
-    const name = toPascalCase(routePath.replace('/', ''))
+    const name = toPascalCase(routePath.slice(1).replaceAll('/', '-'))
     const componentPath = metaPath.replace('/meta.json', '/index.vue')
 
     const { ignore, ...metaData } = metaConfig
@@ -28,10 +28,10 @@ function generateRoute(metaPath: string, metaConfig: MetaConfig): RouteRecordRaw
 
 /**
  * 动态路由配置
- * 扫描 views 目录下的 meta.json 配置文件，根据配置生成路由
+ * 扫描 views 目录下所有层级的 meta.json 配置文件，根据配置生成路由
  */
 export function generateDynamicRoutes(): RouteRecordRaw[] {
-    const metaModules = import.meta.glob<MetaConfig>('../../views/*/meta.json', {
+    const metaModules = import.meta.glob<MetaConfig>('../../views/**/meta.json', {
         eager: true,
         import: 'default',
     })
