@@ -154,12 +154,17 @@ function handleShowSelected() {
         >
             <template #toolbar>
                 <el-button
+                    type="primary"
+                    @click="handleShowSelected"
+                >
+                    查看选中
+                </el-button>
+                <el-button
                     type="danger"
                     @click="handleBatchDelete"
                 >
                     批量删除
                 </el-button>
-                <el-button @click="handleShowSelected"> 查看选中 </el-button>
             </template>
         </ProTable>
     </div>
