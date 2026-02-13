@@ -7,10 +7,10 @@
             "nickname": "管理员",
             "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=admin",
             "roleId": 1,
-            "accessToken": "admin-access-912dbfe0993096504205b5a90ac250c8",
-            "accessTokenExpiresAt": 1770959382729,
-            "refreshToken": "admin-refresh-4b16d854237280efa848e8fed1c0bacf",
-            "refreshTokenExpiresAt": 1773547782729,
+            "accessToken": "admin-access-6e893b2213f6e646e0f2604aa05d2e20",
+            "accessTokenExpiresAt": 1770975055319,
+            "refreshToken": "admin-refresh-ac28d39e423ff96eafbdbcfd010b7159",
+            "refreshTokenExpiresAt": 1773563455319,
             "menus": [
                 {
                     "id": 1,
@@ -171,11 +171,55 @@
                     ]
                 },
                 {
+                    "id": 5,
+                    "name": "DialogDemo",
+                    "type": 1,
+                    "path": "/dialog-example",
+                    "sort": 4,
+                    "parentId": 0,
+                    "status": 1,
+                    "title": "Dialog",
+                    "icon": "MessageBox",
+                    "isExternal": 0,
+                    "isCache": 0,
+                    "isAffix": 0,
+                    "children": [
+                        {
+                            "id": 51,
+                            "name": "DialogBasic",
+                            "type": 2,
+                            "path": "/dialog-example/basic",
+                            "sort": 1,
+                            "parentId": 5,
+                            "status": 1,
+                            "title": "基础弹窗",
+                            "icon": "Document",
+                            "isExternal": 0,
+                            "isCache": 1,
+                            "isAffix": 0
+                        },
+                        {
+                            "id": 52,
+                            "name": "DialogForm",
+                            "type": 2,
+                            "path": "/dialog-example/form",
+                            "sort": 2,
+                            "parentId": 5,
+                            "status": 1,
+                            "title": "表单弹窗",
+                            "icon": "Edit",
+                            "isExternal": 0,
+                            "isCache": 1,
+                            "isAffix": 0
+                        }
+                    ]
+                },
+                {
                     "id": 2,
                     "name": "System",
                     "type": 1,
                     "path": "/system",
-                    "sort": 4,
+                    "sort": 5,
                     "parentId": 0,
                     "status": 1,
                     "title": "系统管理",

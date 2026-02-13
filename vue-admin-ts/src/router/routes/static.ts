@@ -82,6 +82,22 @@ export const staticRoutes: RouteRecordRaw[] = [
                     title: '行选择',
                 },
             },
+            {
+                path: 'dialog-example/basic',
+                name: 'DialogExampleBasic',
+                component: () => import('@/views/dialog-example/basic/index.vue'),
+                meta: {
+                    title: '基础弹窗',
+                },
+            },
+            {
+                path: 'dialog-example/form',
+                name: 'DialogExampleForm',
+                component: () => import('@/views/dialog-example/form/index.vue'),
+                meta: {
+                    title: '表单弹窗',
+                },
+            },
             // 重定向路由（用于刷新页面）
             {
                 path: 'redirect/:path(.*)',
