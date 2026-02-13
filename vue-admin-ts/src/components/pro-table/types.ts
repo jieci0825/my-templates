@@ -67,7 +67,7 @@ export interface TableApiResult<T = Record<string, any>> {
 
 /** 数据请求函数签名 */
 export type TableApiFn<T = Record<string, any>> = (
-    params: PaginationParams & Record<string, any>,
+    params: Partial<PaginationParams> & Record<string, any>,
 ) => Promise<TableApiResult<T>>
 
 /** 分页配置 */

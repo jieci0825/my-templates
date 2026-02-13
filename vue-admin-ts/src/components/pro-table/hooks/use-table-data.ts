@@ -15,6 +15,8 @@ interface UseTableDataOptions {
 export function useTableData(options: UseTableDataOptions) {
     const { api, paginationConfig, immediate = true, getSearchModel = () => ({}), responseMapping } = options
 
+    const paginationHidden = paginationConfig?.hidden ?? false
+
     const data = ref<Record<string, any>[]>([])
     const loading = ref(false)
     const pagination = ref({
@@ -31,8 +33,10 @@ export function useTableData(options: UseTableDataOptions) {
         loading.value = true
         try {
             const params = {
-                page: pagination.value.page,
-                pageSize: pagination.value.pageSize,
+                ...(!paginationHidden && {
+                    page: pagination.value.page,
+                    pageSize: pagination.value.pageSize,
+                }),
                 ...getSearchModel(),
             }
             const res: any = await api(params)
