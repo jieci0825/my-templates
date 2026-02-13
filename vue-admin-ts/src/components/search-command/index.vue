@@ -165,9 +165,16 @@ defineExpose({
 <template>
     <Teleport to="body">
         <Transition name="fade">
-            <div v-if="visible" class="search-command-overlay" @click.self="close">
+            <div
+                v-if="visible"
+                class="search-command-overlay"
+                @click.self="close"
+            >
                 <Transition name="scale">
-                    <div v-if="visible" class="search-command-modal">
+                    <div
+                        v-if="visible"
+                        class="search-command-modal"
+                    >
                         <!-- 搜索输入框 -->
                         <div class="search-command-header">
                             <icon-carbon-search class="search-icon" />
@@ -179,18 +186,27 @@ defineExpose({
                                 placeholder="输入命令或搜索..."
                                 @keydown="handleKeydown"
                             />
-                            <button class="close-btn" @click="close">
+                            <button
+                                class="close-btn"
+                                @click="close"
+                            >
                                 <icon-carbon-close />
                             </button>
                         </div>
 
                         <!-- 搜索结果列表 -->
                         <div class="search-command-body">
-                            <div v-if="searchResults.length === 0" class="empty-result">
+                            <div
+                                v-if="searchResults.length === 0"
+                                class="empty-result"
+                            >
                                 <icon-carbon-search class="empty-icon" />
                                 <span>没有找到相关菜单</span>
                             </div>
-                            <div v-else class="search-result-list">
+                            <div
+                                v-else
+                                class="search-result-list"
+                            >
                                 <div
                                     v-for="(item, index) in searchResults"
                                     :key="item.id"

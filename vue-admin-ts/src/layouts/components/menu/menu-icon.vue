@@ -10,6 +10,8 @@ import IconCircleCheck from '~icons/mdi/check-circle-outline'
 import IconLink from '~icons/mdi/link'
 import IconUpload from '~icons/mdi/upload'
 import IconBrush from '~icons/mdi/brush'
+import IconTable from '~icons/mdi/table'
+import IconSearch from '~icons/mdi/magnify'
 
 interface Props {
     /** 后端返回的 icon 名称 */
@@ -30,6 +32,8 @@ const iconMap: Record<string, Component> = {
     Link: IconLink,
     Upload: IconUpload,
     Brush: IconBrush,
+    Table: IconTable,
+    Search: IconSearch,
 }
 
 const iconComponent = computed(() => {

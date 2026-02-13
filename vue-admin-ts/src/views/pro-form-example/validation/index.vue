@@ -75,9 +75,7 @@ const rules: FormRules = {
         { required: true, message: '请输入手机号', trigger: 'blur' },
         { pattern: /^1[3-9]\d{9}$/, message: '请输入正确的手机号格式', trigger: 'blur' },
     ],
-    age: [
-        { required: true, message: '请输入年龄', trigger: 'blur' },
-    ],
+    age: [{ required: true, message: '请输入年龄', trigger: 'blur' }],
     password: [
         { required: true, message: '请输入密码', trigger: 'blur' },
         { min: 6, message: '密码长度不能少于 6 位', trigger: 'blur' },
@@ -96,9 +94,7 @@ const rules: FormRules = {
             trigger: 'blur',
         },
     ],
-    website: [
-        { type: 'url', message: '请输入正确的网址格式', trigger: 'blur' },
-    ],
+    website: [{ type: 'url', message: '请输入正确的网址格式', trigger: 'blur' }],
     agreement: [
         {
             validator: (_, value, callback) => {
@@ -129,9 +125,3 @@ const [PageForm, formApi] = usePageForm({
         <PageForm />
     </div>
 </template>
-
-<style scoped lang="scss">
-.container {
-    padding: 20px;
-}
-</style>

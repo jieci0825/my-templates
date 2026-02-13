@@ -153,9 +153,3 @@ const [PageForm] = usePageForm({
         <PageForm />
     </div>
 </template>
-
-<style scoped lang="scss">
-.container {
-    padding: 20px;
-}
-</style>

@@ -58,6 +58,22 @@ export const staticRoutes: RouteRecordRaw[] = [
                     title: '校验表单',
                 },
             },
+            {
+                path: 'pro-table-example/basic',
+                name: 'ProTableExampleBasic',
+                component: () => import('@/views/pro-table-example/basic/index.vue'),
+                meta: {
+                    title: '基础用法',
+                },
+            },
+            {
+                path: 'pro-table-example/search',
+                name: 'ProTableExampleSearch',
+                component: () => import('@/views/pro-table-example/search/index.vue'),
+                meta: {
+                    title: '搜索表格',
+                },
+            },
             // 重定向路由（用于刷新页面）
             {
                 path: 'redirect/:path(.*)',

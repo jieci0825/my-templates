@@ -125,10 +125,6 @@ function toggleTag(model: Record<string, any>, tag: string) {
 </template>
 
 <style scoped lang="scss">
-.container {
-    padding: 20px;
-}
-
 .tag-selector {
     display: flex;
     flex-wrap: wrap;
