@@ -94,6 +94,14 @@ export interface ProTableProps {
     immediate?: boolean
     /** 是否显示多选列，默认 false */
     selectable?: boolean
+    /** 行唯一标识字段，默认 'id' */
+    rowKey?: string
+    /** 是否持久化选中状态到 localStorage，默认 false（仅内存缓存） */
+    selectionPersist?: boolean
+    /** localStorage 存储 key，selectionPersist 为 true 时需要提供，不提供则按当前路径自动生成 */
+    selectionStorageKey?: string
+    /** 默认选中行的 key 值数组（仅初始化时生效） */
+    defaultSelectedKeys?: (string | number)[]
 
     /** 透传 el-table 原生属性 */
     tableProps?: Record<string, any>

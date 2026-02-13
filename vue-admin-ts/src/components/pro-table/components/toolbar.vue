@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import IconRefresh from '~icons/mdi/refresh'
+
 interface Emits {
     (e: 'refresh'): void
 }
 
-defineEmits<Emits>()
+const emit = defineEmits<Emits>()
 </script>
 
 <template>
@@ -12,7 +14,19 @@ defineEmits<Emits>()
             <slot name="toolbar" />
         </div>
         <div class="pro-table-toolbar__right">
-            <!-- TODO: 添加刷新按钮 -->
+            <el-tooltip
+                content="刷新"
+                placement="top"
+            >
+                <el-button
+                    circle
+                    @click="emit('refresh')"
+                >
+                    <el-icon :size="16">
+                        <IconRefresh />
+                    </el-icon>
+                </el-button>
+            </el-tooltip>
         </div>
     </div>
 </template>
@@ -26,11 +40,15 @@ defineEmits<Emits>()
 }
 
 .pro-table-toolbar__left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     flex: 1;
 }
 
 .pro-table-toolbar__right {
     display: flex;
+    align-items: center;
     gap: 8px;
 }
 </style>

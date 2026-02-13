@@ -74,6 +74,14 @@ export const staticRoutes: RouteRecordRaw[] = [
                     title: '搜索表格',
                 },
             },
+            {
+                path: 'pro-table-example/selection',
+                name: 'ProTableExampleSelection',
+                component: () => import('@/views/pro-table-example/selection/index.vue'),
+                meta: {
+                    title: '行选择',
+                },
+            },
             // 重定向路由（用于刷新页面）
             {
                 path: 'redirect/:path(.*)',
