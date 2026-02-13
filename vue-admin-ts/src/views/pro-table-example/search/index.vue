@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { h } from 'vue'
 import { ElTag } from 'element-plus'
-import ProTable from '@/components/pro-table/index.vue'
+import { usePageTable } from '@/composables/use-page-table'
 import type { ProTableColumn, TableApiFn, ProTableSearchConfig } from '@/components/pro-table/types'
 import type { ProFormColumn } from '@/components/pro-form/types'
 
@@ -160,15 +160,17 @@ const fetchUserList: TableApiFn = async (params) => {
         total: filtered.length,
     }
 }
+
+const [UserTable] = usePageTable({
+    columns,
+    api: fetchUserList,
+    search,
+})
 </script>
 
 <template>
     <div class="container">
-        <ProTable
-            :columns="columns"
-            :api="fetchUserList"
-            :search="search"
-        />
+        <UserTable />
     </div>
 </template>
 

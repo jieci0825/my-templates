@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { h } from 'vue'
 import { ElTag } from 'element-plus'
-import ProTable from '@/components/pro-table/index.vue'
+import { usePageTable } from '@/composables/use-page-table'
 import type { ProTableColumn, TableApiFn } from '@/components/pro-table/types'
 
 const columns: ProTableColumn[] = [
@@ -54,13 +54,15 @@ const fetchUserList: TableApiFn = async (params) => {
         total: mockUsers.length,
     }
 }
+
+const [UserTable] = usePageTable({
+    columns,
+    api: fetchUserList,
+})
 </script>
 
 <template>
     <div class="container">
-        <ProTable
-            :columns="columns"
-            :api="fetchUserList"
-        />
+        <UserTable />
     </div>
 </template>

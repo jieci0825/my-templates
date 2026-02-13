@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import { h, ref } from 'vue'
+import { h } from 'vue'
 import { ElTag, ElButton, ElMessage } from 'element-plus'
-import ProTable from '@/components/pro-table/index.vue'
-import type { ProTableColumn, TableApiFn, ProTableSearchConfig, ProTableExpose } from '@/components/pro-table/types'
+import { usePageTable } from '@/composables/use-page-table'
+import type { ProTableColumn, TableApiFn, ProTableSearchConfig } from '@/components/pro-table/types'
 import type { ProFormColumn } from '@/components/pro-form/types'
-
-const tableRef = ref<ProTableExpose>()
-
-/** 是否开启持久化 */
-const persistEnabled = ref(true)
 
 /** 表格列配置 */
 const columns: ProTableColumn[] = [
@@ -114,8 +109,8 @@ const fetchUserList: TableApiFn = async (params) => {
         filtered = filtered.filter((u) => u.status === status)
     }
 
-    const start = (page - 1) * pageSize
-    const end = start + pageSize
+    const start = ((page ?? 1) - 1) * (pageSize ?? 10)
+    const end = start + (pageSize ?? 10)
 
     return {
         data: filtered.slice(start, end),
@@ -123,9 +118,19 @@ const fetchUserList: TableApiFn = async (params) => {
     }
 }
 
+const [UserTable, tableApi] = usePageTable({
+    columns,
+    api: fetchUserList,
+    search,
+    selectable: true,
+    defaultSelectedKeys: [1, 3, 5],
+    selectionPersist: true,
+    selectionStorageKey: 'pro-table-selection-demo',
+})
+
 /** 批量删除 */
 function handleBatchDelete() {
-    const rows = tableRef.value?.getSelectedRows() ?? []
+    const rows = tableApi.getSelectedRows()
     if (rows.length === 0) {
         ElMessage.warning('请先选择数据')
         return
@@ -135,23 +140,14 @@ function handleBatchDelete() {
 
 /** 查看选中 */
 function handleShowSelected() {
-    const rows = tableRef.value?.getSelectedRows() ?? []
+    const rows = tableApi.getSelectedRows()
     ElMessage.info(`当前选中 ${rows.length} 条：${rows.map((r) => r.name).join('、') || '无'}`)
 }
 </script>
 
 <template>
     <div class="container">
-        <ProTable
-            ref="tableRef"
-            :columns="columns"
-            :api="fetchUserList"
-            :search="search"
-            selectable
-            :default-selected-keys="[1, 3, 5]"
-            :selection-persist="persistEnabled"
-            selection-storage-key="pro-table-selection-demo"
-        >
+        <UserTable>
             <template #toolbar>
                 <el-button
                     type="primary"
@@ -166,7 +162,7 @@ function handleShowSelected() {
                     批量删除
                 </el-button>
             </template>
-        </ProTable>
+        </UserTable>
     </div>
 </template>
 
