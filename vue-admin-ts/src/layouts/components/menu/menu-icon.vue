@@ -12,6 +12,8 @@ import IconUpload from '~icons/mdi/upload'
 import IconBrush from '~icons/mdi/brush'
 import IconTable from '~icons/mdi/table'
 import IconSearch from '~icons/mdi/magnify'
+import IconMessageBox from '~icons/mdi/message-text-outline'
+import IconEdit from '~icons/mdi/pencil-outline'
 
 interface Props {
     /** 后端返回的 icon 名称 */
@@ -34,6 +36,8 @@ const iconMap: Record<string, Component> = {
     Brush: IconBrush,
     Table: IconTable,
     Search: IconSearch,
+    MessageBox: IconMessageBox,
+    Edit: IconEdit,
 }
 
 const iconComponent = computed(() => {
