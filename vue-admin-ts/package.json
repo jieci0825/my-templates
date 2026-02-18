@@ -4,8 +4,9 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite dev --mode development",
-        "mock": "pnpm -C mock-server dev",
+        "dev": "concurrently -n mock,web -c blue,green --kill-others-on-fail \"pnpm run dev:mock\" \"wait-on tcp:localhost:3100 && pnpm run dev:web\"",
+        "dev:mock": "pnpm -C mock-server dev",
+        "dev:web": "vite dev --mode development",
         "build": "vue-tsc -b && vite build --mode production",
         "build:dev": "vue-tsc -b && vite build --mode development",
         "preview": "vite preview"
@@ -34,6 +35,7 @@
         "unplugin-icons": "^23.0.1",
         "unplugin-vue-components": "^31.0.0",
         "vite": "^7.2.4",
-        "vue-tsc": "^3.1.4"
+        "vue-tsc": "^3.1.4",
+        "wait-on": "^9.0.4"
     }
 }
