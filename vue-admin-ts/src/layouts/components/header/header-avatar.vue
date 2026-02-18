@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import Avatar from '@/components/avatar/index.vue'
-import { useUserStore, useLockStore } from '@/stores'
+import { useUserStore } from '@/stores'
+// #scaffold-start:lockScreen
+import { useLockStore } from '@/stores'
+// #scaffold-end:lockScreen
 
 interface Emits {
     (e: 'logout'): void
@@ -9,6 +12,7 @@ interface Emits {
 
 const emit = defineEmits<Emits>()
 const userStore = useUserStore()
+// #scaffold-start:lockScreen
 const lockStore = useLockStore()
 
 const lockDialogVisible = ref(false)
@@ -33,6 +37,7 @@ const handleLock = () => {
     lockDialogVisible.value = false
     lockPassword.value = ''
 }
+// #scaffold-end:lockScreen
 
 const handleLogout = () => {
     emit('logout')
@@ -67,10 +72,12 @@ const handleLogout = () => {
                         <icon-carbon-document />
                         <span>使用文档</span>
                     </div>
+                    <!-- #scaffold-start:lockScreen -->
                     <div class="user-dropdown__item" @click="handleShowLockDialog">
                         <icon-carbon-locked />
                         <span>锁定屏幕</span>
                     </div>
+                    <!-- #scaffold-end:lockScreen -->
                 </div>
 
                 <!-- 退出登录按钮 -->
@@ -81,6 +88,7 @@ const handleLogout = () => {
         </template>
     </el-dropdown>
 
+    <!-- #scaffold-start:lockScreen -->
     <!-- 锁屏密码设置弹窗 -->
     <el-dialog
         v-model="lockDialogVisible"
@@ -106,6 +114,7 @@ const handleLogout = () => {
             <el-button type="primary" :disabled="!lockPasswordValid" @click="handleLock">锁定</el-button>
         </template>
     </el-dialog>
+    <!-- #scaffold-end:lockScreen -->
 </template>
 
 <style lang="scss">

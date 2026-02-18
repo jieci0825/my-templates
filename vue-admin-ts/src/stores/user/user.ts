@@ -9,12 +9,18 @@ import { STORAGE_KEY } from '@/constants'
 import router, {
     resetRoutesRegistered,
     markRoutesRegistered,
+    // #scaffold-start:tabs
     resetAffixTabsInitialized,
+    // #scaffold-end:tabs
     removeDynamicRoutes,
     registerDynamicRoutes,
 } from '@/router'
+// #scaffold-start:tabs
 import { useTabStore } from '@/stores/tab'
+// #scaffold-end:tabs
+// #scaffold-start:lockScreen
 import { useLockStore } from '@/stores/lock'
+// #scaffold-end:lockScreen
 
 export const useUserStore = defineStore('user', () => {
     const userInfo = ref<UserState['userInfo']>(getStorage(STORAGE_KEY.USER_INFO))
@@ -69,18 +75,24 @@ export const useUserStore = defineStore('user', () => {
         removeStorage(STORAGE_KEY.REFRESH_TOKEN)
         removeStorage(STORAGE_KEY.USER_INFO)
 
+        // #scaffold-start:tabs
         // 清除标签页
         const tabStore = useTabStore()
         tabStore.clearTabs()
+        // #scaffold-end:tabs
 
+        // #scaffold-start:lockScreen
         // 重置锁屏状态
         const lockStore = useLockStore()
         lockStore.reset()
+        // #scaffold-end:lockScreen
 
         // 重置路由相关状态
         removeDynamicRoutes()
         resetRoutesRegistered()
+        // #scaffold-start:tabs
         resetAffixTabsInitialized()
+        // #scaffold-end:tabs
 
         // 跳转到登录页，携带 redirect 参数便于重新登录后回到退出前的页面
         const currentPath = redirectPath ?? router.currentRoute.value.fullPath

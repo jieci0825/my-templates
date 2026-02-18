@@ -1,0 +1,42 @@
+{
+    "prompts": [
+        {
+            "name": "projectName",
+            "type": "text",
+            "message": "项目名称",
+            "default": "my-admin"
+        },
+        {
+            "name": "includeExamples",
+            "type": "confirm",
+            "message": "是否包含示例页面（ProForm、ProTable、Dialog 示例）",
+            "default": false
+        },
+        {
+            "name": "includeSystemPages",
+            "type": "confirm",
+            "message": "是否包含系统管理页面（用户管理、角色管理）",
+            "default": true
+        },
+        {
+            "name": "includeMockServer",
+            "type": "confirm",
+            "message": "是否包含 Mock 服务",
+            "default": true
+        },
+        {
+            "name": "features",
+            "type": "multiselect",
+            "message": "选择需要的功能",
+            "options": [
+                { "label": "Tabs 标签页管理", "value": "tabs" },
+                { "label": "LockScreen 锁屏", "value": "lockScreen" },
+                { "label": "NProgress 页面进度条", "value": "nprogress" },
+                { "label": "Watermark 全局水印", "value": "watermark" },
+                { "label": "SearchCommand 搜索命令面板", "value": "searchCommand" },
+                { "label": "SettingsDrawer 设置抽屉", "value": "settingsDrawer" }
+            ],
+            "default": ["tabs", "lockScreen", "nprogress", "watermark", "searchCommand", "settingsDrawer"]
+        }
+    ]
+}

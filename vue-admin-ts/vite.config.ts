@@ -62,6 +62,7 @@ export default defineConfig({
             },
         },
     },
+    // #scaffold-start:mockServer
     server: {
         proxy: {
             '/api': {
@@ -70,4 +71,5 @@ export default defineConfig({
             },
         },
     },
+    // #scaffold-end:mockServer
 })

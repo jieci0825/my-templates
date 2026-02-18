@@ -20,5 +20,7 @@ export default router
 
 // 导出公共 API
 export { resetRoutesRegistered, markRoutesRegistered } from './guards/permission'
+// #scaffold-start:tabs
 export { resetAffixTabsInitialized } from './guards/tabs'
+// #scaffold-end:tabs
 export { registerDynamicRoutes, removeDynamicRoutes } from './utils'

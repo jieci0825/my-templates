@@ -2,7 +2,9 @@
 import Aside from '../aside/index.vue'
 import Header from '../header/index.vue'
 import HeaderBreadcrumb from '../header/header-breadcrumb.vue'
+// #scaffold-start:tabs
 import Tabs from '../tabs/index.vue'
+// #scaffold-end:tabs
 import Main from '../main/index.vue'
 import { useSettingsStore, useUserStore } from '@/stores'
 
@@ -33,7 +35,9 @@ const handleLogout = () => {
                 <HeaderBreadcrumb @toggle-sidebar="handleToggleSidebar" />
             </Header>
 
+            <!-- #scaffold-start:tabs -->
             <Tabs v-if="settingState.isShowTags" />
+            <!-- #scaffold-end:tabs -->
             <Main />
         </el-container>
     </el-container>

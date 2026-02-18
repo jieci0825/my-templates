@@ -18,6 +18,7 @@ export const staticRoutes: RouteRecordRaw[] = [
                     title: '仪表盘',
                 },
             },
+            // #scaffold-start:examples
             {
                 path: 'pro-form-example/basic',
                 name: 'ProFormExampleBasic',
@@ -98,6 +99,7 @@ export const staticRoutes: RouteRecordRaw[] = [
                     title: '表单弹窗',
                 },
             },
+            // #scaffold-end:examples
             // 重定向路由（用于刷新页面）
             {
                 path: 'redirect/:path(.*)',

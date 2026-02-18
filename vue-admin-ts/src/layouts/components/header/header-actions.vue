@@ -21,9 +21,11 @@ const handleThemeChange = (value: Theme) => {
     settingsStore.setSetting('theme', value)
 }
 
+// #scaffold-start:settingsDrawer
 const handleOpenSettings = () => {
     settingsStore.setSetting('settingsDrawerVisible', true)
 }
+// #scaffold-end:settingsDrawer
 
 const handleToggleFullscreen = () => {
     settingsStore.setSetting('isShowFullscreen', !settingsStore.settingState.isShowFullscreen)
@@ -64,9 +66,11 @@ const themeIcon = computed<Component>(() => {
         <icon-carbon-fit-to-screen />
     </div>
 
+    <!-- #scaffold-start:settingsDrawer -->
     <div class="icon-btn" @click="handleOpenSettings">
         <icon-carbon-settings />
     </div>
+    <!-- #scaffold-end:settingsDrawer -->
 </template>
 
 <style scoped lang="scss">

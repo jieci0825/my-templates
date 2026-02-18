@@ -5,6 +5,10 @@ export const STORAGE_KEY = {
     REFRESH_TOKEN: `${PREFIX}_refresh_token`,
     USER_INFO: `${PREFIX}_user_info`,
     SETTINGS: `${PREFIX}_settings`,
+    // #scaffold-start:tabs
     TABS: `${PREFIX}_tabs`,
+    // #scaffold-end:tabs
+    // #scaffold-start:lockScreen
     LOCK_INFO: `${PREFIX}_lock_info`,
+    // #scaffold-end:lockScreen
 }

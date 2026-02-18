@@ -1,5 +1,7 @@
 <script setup lang="ts">
+// #scaffold-start:searchCommand
 import HeaderSearch from './header-search.vue'
+// #scaffold-end:searchCommand
 import HeaderActions from './header-actions.vue'
 import HeaderAvatar from './header-avatar.vue'
 
@@ -20,7 +22,9 @@ const handleLogout = () => {
         <slot />
 
         <div class="header-right">
+            <!-- #scaffold-start:searchCommand -->
             <HeaderSearch />
+            <!-- #scaffold-end:searchCommand -->
             <HeaderActions />
             <HeaderAvatar @logout="handleLogout" />
         </div>
