@@ -1,10 +1,10 @@
 {
-  "templates": [
-    {
-      "id": "vue-admin-ts",
-      "name": "Vue Admin TS",
-      "description": "基于 Vue3 + TypeScript + Vite + Element Plus 的后台管理模板",
-      "version": "1.0.0"
-    }
-  ]
+    "templates": [
+        {
+            "id": "vue-admin-ts",
+            "name": "VueAdminTS",
+            "description": "基于 Vue3 + TypeScript + Vite + Element Plus 的后台管理模板",
+            "version": "1.0.0"
+        }
+    ]
 }
